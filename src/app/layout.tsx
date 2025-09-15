@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +29,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="fixed top-0 inset-x-0 z-50 w-full bg-[#131313] text-white py-5">
+          <div className="mx-auto max-w-6xl px-17 py-3 flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-3">
+              <Image src="/logo.png" alt="Car Parts" width={140} height={80} />
+            </Link>
+            <nav className="flex items-center gap-9 text-sm">
+              <Link href="/" className="hover:underline">Home</Link>
+              <Link href="/about" className="hover:underline">About Us</Link>
+              <Link href="/community" className="hover:underline">Community</Link>
+              <Link href="/faq" className="hover:underline">FAQ</Link>
+              <Link href="/terms" className="hover:underline">Terms</Link>
+              <Link href="/privacy" className="hover:underline">Privacy</Link>
+            </nav>
+          </div>
+        </header>
+        <main className="pt-24">{children}</main>
       </body>
     </html>
   );
