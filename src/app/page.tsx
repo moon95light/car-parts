@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="Home relative min-h-screen w-full">
@@ -40,9 +43,9 @@ export default function Home() {
         <div className="relative z-10 flex justify-between md:flex-row flex-col bg-[linear-gradient(to_right,rgba(85,90,29,0.7)_100%,rgba(85,90,29,0.7)_100%)] backdrop-blur-sm shadow-inner border border-[rgb(235_255_0/var(--tw-border-opacity,1))] p-10 max-sm:p-5 max-sm:py-10 rounded-2xl text-sm md:space-x-20 max-md:space-y-10 text-white">
           <div className="left space-y-6 md:max-w-[520px] max-w-[600px]">
             <div className="logo">
-              <a href="/">
-                <img src="/logo.png" alt="Logo" className="w-32 h-12 object-contain" />
-              </a>
+              <Link href="/">
+                <Image src="/logo.png" alt="Logo" width={128} height={48} className="w-32 h-12 object-contain" />
+              </Link>
             </div>
             <div>
               Save on your car parts by finding cheaper alternatives from the entirety of the internet within seconds.
@@ -62,15 +65,15 @@ export default function Home() {
           <div className="right flex lg:space-x-20 md:space-x-10 space-x-20">
             <div className="flex flex-col justify-start pt-1 space-y-2 min-w-[160px]">
               <strong className="mb-3">Site Map</strong>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap text-primary" href="/">Home</a>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap" href="/about">About Us</a>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap" href="/community">Community</a>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap" href="/faq">FAQ</a>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap text-primary" href="/">Home</Link>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap" href="/about">About Us</Link>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap" href="/community">Community</Link>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap" href="/faq">FAQ</Link>
             </div>
             <div className="flex flex-col justify-start pt-1 lg:pr-20 pr-5 space-y-2 min-w-[160px]">
               <strong className="mb-3">Legal</strong>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap" href="/terms">Terms of Service</a>
-              <a className="relative leading-6 hover:text-white whitespace-nowrap" href="/privacy">Privacy Policy</a>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap" href="/terms">Terms of Service</Link>
+              <Link className="relative leading-6 hover:text-white whitespace-nowrap" href="/privacy">Privacy Policy</Link>
             </div>
           </div>
         </div>
